@@ -1,14 +1,29 @@
 # korean_words
 
-A new Flutter package project.
+A package containing the most over 5,000 used Korean words to generate combine words.
 
-## Getting Started
+## Usage
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+Generating 5 interesting word combinations:
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+wordCount 1 : just noun.
+wordCount 2 : noun with adjective.
+wordCount 3 : noun with adjective and verb.
+wordCount 4 : noun with adjective, verb and adverb.
+
+
+
+    import 'package:korean_words/korean_words.dart';
+    
+    main() {
+        generateKoreanWords(wordCount: 3).take(5).forEach(print);
+    }
+
+## Features and bugs
+
+Please file feature requests and bugs at the [issue tracker][tracker].
+
+[tracker]: https://github.com/PlatiB/korean_words/issues
+
+## Inspired project
+https://github.com/filiph/english_words
