@@ -12,14 +12,14 @@ import 'package:korean_words/src/words/boosa.dart';
 
 final _random = Random();
 
-Iterable<KoreanWords> generateKoreanWords(
-    {int wordCount = 2,
-    Random random,
-    }) sync* {
+Iterable<KoreanWords> generateKoreanWords({
+  int wordCount = 2,
+  Random random,
+}) sync* {
   random ??= _random;
 
   String pickRandom(List<String> list) => list[random.nextInt(list.length)];
-  
+
   String dongsa;
   String boosa;
   String hyeongyongsa;
@@ -68,10 +68,10 @@ class KoreanWords {
     this.hyeongyongsa,
     this.boosa,
   }) {
-    if (myeongsa==null) myeongsa='';
-    if (dongsa==null) dongsa='';
-    if (hyeongyongsa==null) hyeongyongsa='';
-    if (boosa==null) boosa='';
+    if (myeongsa == null) myeongsa = '';
+    if (dongsa == null) dongsa = '';
+    if (hyeongyongsa == null) hyeongyongsa = '';
+    if (boosa == null) boosa = '';
   }
 
   String get asString => _asString ??= '$boosa $dongsa $hyeongyongsa $myeongsa';
@@ -81,5 +81,4 @@ class KoreanWords {
 
   @override
   String toString() => asString;
-
 }

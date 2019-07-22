@@ -1,5 +1,5 @@
 name: korean_words
-description: A new Flutter package project.
+description: A package containing the most over 5,000 used Korean words to generate combine words. Combine count is over 5 hundred billion.
 version: 1.0.1
 author: PlatiB <platib85@gmail.com>
 homepage: https://github.com/PlatiB/korean_words
