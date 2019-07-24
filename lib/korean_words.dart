@@ -28,18 +28,18 @@ Iterable<KoreanWords> generateKoreanWords({
   while (true) {
     switch (wordCount) {
       case 3:
-        dongsa = pickRandom(listDongsa);
-        hyeongyongsa = pickRandom(listHyeongyongsa);
+        dongsa = pickRandom(listDongsa) + ' ';
+        hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
         myeongsa = pickRandom(listMyeongsa);
         break;
       case 4:
-        boosa = pickRandom(listBoosa);
-        dongsa = pickRandom(listDongsa);
-        hyeongyongsa = pickRandom(listHyeongyongsa);
+        boosa = pickRandom(listBoosa) + ' ';
+        dongsa = pickRandom(listDongsa) + ' ';
+        hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
         myeongsa = pickRandom(listMyeongsa);
         break;
       default:
-        hyeongyongsa = pickRandom(listHyeongyongsa);
+        hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
         myeongsa = pickRandom(listMyeongsa);
         break;
     }
@@ -74,7 +74,7 @@ class KoreanWords {
     if (boosa == null) boosa = '';
   }
 
-  String get asString => _asString ??= '$boosa $dongsa $hyeongyongsa $myeongsa';
+  String get asString => _asString ??= '$boosa$dongsa$hyeongyongsa$myeongsa';
 
   /// Returns [value] plus 1.
   int addOne(int value) => value + 1;
