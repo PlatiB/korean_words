@@ -361,6 +361,8 @@ const List<String> listHyeongyongsa = [
   '필요한',
   '하얀',
   '한가한',
+  '허기진',
+  '허약한',
   '해로운',
   '행복한',
   '화려한',
