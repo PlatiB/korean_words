@@ -14,19 +14,23 @@ final _random = Random();
 
 Iterable<KoreanWords> generateKoreanWords({
   int wordCount = 2,
-  Random random,
+  Random? random,
 }) sync* {
-  random ??= _random;
+  final rand = random ?? _random;
 
-  String pickRandom(List<String> list) => list[random.nextInt(list.length)];
+  String pickRandom(List<String> list) => list[rand.nextInt(list.length)];
 
-  String dongsa;
-  String boosa;
-  String hyeongyongsa;
-  String myeongsa;
+  String? dongsa;
+  String? boosa;
+  String? hyeongyongsa;
+  String? myeongsa;
 
   while (true) {
     switch (wordCount) {
+      case 2:
+        hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
+        myeongsa = pickRandom(listMyeongsa);
+        break;
       case 3:
         dongsa = pickRandom(listDongsa) + ' ';
         hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
@@ -39,7 +43,6 @@ Iterable<KoreanWords> generateKoreanWords({
         myeongsa = pickRandom(listMyeongsa);
         break;
       default:
-        hyeongyongsa = pickRandom(listHyeongyongsa) + ' ';
         myeongsa = pickRandom(listMyeongsa);
         break;
     }
@@ -57,27 +60,22 @@ Iterable<KoreanWords> generateKoreanWords({
 
 class KoreanWords {
   String myeongsa;
-  String dongsa;
-  String hyeongyongsa;
-  String boosa;
-  String _asString;
+  String? dongsa;
+  String? hyeongyongsa;
+  String? boosa;
 
   KoreanWords({
-    this.myeongsa,
+    required this.myeongsa,
     this.dongsa,
     this.hyeongyongsa,
     this.boosa,
   }) {
-    if (myeongsa == null) myeongsa = '';
-    if (dongsa == null) dongsa = '';
-    if (hyeongyongsa == null) hyeongyongsa = '';
-    if (boosa == null) boosa = '';
+    dongsa ??= '';
+    hyeongyongsa ??= '';
+    boosa ??= '';
   }
 
-  String get asString => _asString ??= '$boosa$dongsa$hyeongyongsa$myeongsa';
-
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+  String get asString => '$boosa$dongsa$hyeongyongsa$myeongsa';
 
   @override
   String toString() => asString;
